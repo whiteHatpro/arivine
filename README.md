@@ -33,19 +33,28 @@ This website embodies restraint, silence, and confidence. It doesn't announce it
 ## 📂 Structure
 
 ```
-/Arivine
+/arivine
 ├── index.html          # Brand story homepage
 ├── collection.html     # Product collection page
 ├── product.html        # Product detail page
-├── styles.css          # Global design system
-├── catalog.css         # Collection/detail page styling
-├── script.js           # Homepage interactions
-├── products.js         # Shared product data
-├── catalog.js          # Collection/detail rendering logic
-├── hero-woman.jpg      # Hero section image
-├── collection-1.jpg    # Lumière visual
-├── collection-2.jpg    # Essence visual
-└── collection-3.jpg    # Solitude visual
+├── checkout.html       # Checkout page
+├── login.html          # Customer login
+├── account.html        # My account page
+├── css/
+│   ├── styles.css      # Global design system
+│   └── catalog.css     # Collection/detail page styling
+├── js/
+│   ├── script.js       # Homepage interactions
+│   ├── products.js     # Shared product data
+│   ├── catalog.js      # Collection/detail rendering logic
+│   ├── checkout.js     # Checkout logic
+│   ├── auth.js         # Auth & nav updates
+│   └── supabase-init.js
+└── assets/
+    ├── favicon.png
+    ├── Dress Image.jpeg
+    ├── Dress Image 2.jpeg … 7.jpeg
+    └── Arivine Logo.jpeg
 ```
 
 ## 🚀 Usage

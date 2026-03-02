@@ -11,10 +11,10 @@
     // ═══════════════════════════════════════════════════════════
 
     const criticalImages = [
-        'Dress Image 3.jpeg',
-        'Dress Image.jpeg',
-        'Dress Image 2.jpeg',
-        'Dress Image 7.jpeg'
+        'assets/Dress Image 3.jpeg',
+        'assets/Dress Image.jpeg',
+        'assets/Dress Image 2.jpeg',
+        'assets/Dress Image 7.jpeg'
     ];
 
     function preloadImages() {
