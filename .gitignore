@@ -1,0 +1,23 @@
+# Cursor / IDE — keep local; do not commit
+.cursor/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets (if added later)
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Logs & temp
+*.log
+.cache/
+tmp/
+temp/
