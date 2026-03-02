@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARIVINE — My Account</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/catalog.css">
     <style>
@@ -57,18 +58,50 @@
             background: #F8F6F1;
             color: #0A0A0A;
         }
+
+        @media (max-width: 768px) {
+            .account-container {
+                margin: 80px 24px 60px;
+                padding: 32px 24px;
+            }
+
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .account-container {
+                margin: 70px 16px 40px;
+                padding: 24px 20px;
+            }
+
+            .account-header {
+                font-size: 2rem;
+            }
+
+            .logout-btn {
+                min-height: 48px;
+                padding: 14px 28px;
+            }
+        }
     </style>
 </head>
 
 <body class="catalog-page">
-    <nav class="navigation">
+    <nav class="navigation" id="main-nav">
         <div class="nav-left">
             <a href="index.html" class="logo-link">ARIVINE</a>
         </div>
+        <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
         <div class="nav-right">
             <a href="index.html#house" class="nav-link">The House</a>
+            <a href="index.html#collections" class="nav-link">Collections</a>
             <a href="collection.html" class="nav-link">Product Collection</a>
-            <a href="checkout.html" class="nav-link cart-link">Cart <span id="cart-count"></span></a>
+            <a href="index.html#craft" class="nav-link">Craft & Atelier</a>
+            <a href="index.html#woman" class="nav-link">The Arivine Woman</a>
+            <a href="index.html#contact" class="nav-link">Private Contact</a>
+            <a href="checkout.html" class="nav-link cart-link">Cart <span id="cart-count">(0)</span></a>
         </div>
     </nav>
 
