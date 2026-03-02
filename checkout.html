@@ -25,6 +25,11 @@
             gap: 80px;
         }
 
+        .checkout-details,
+        .order-summary {
+            min-width: 0;
+        }
+
         .checkout-section-title {
             font-family: var(--font-editorial);
             font-size: 32px;
@@ -58,6 +63,8 @@
 
         input,
         select {
+            max-width: 100%;
+            box-sizing: border-box;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(212, 175, 55, 0.2);
             padding: 14px;
@@ -169,6 +176,10 @@
                 gap: 40px;
             }
 
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
             .order-summary {
                 padding: 24px;
             }
@@ -182,10 +193,6 @@
             .checkout-container {
                 margin: 100px 16px 40px;
                 padding: 0 16px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
             }
 
             .checkout-section-title {
