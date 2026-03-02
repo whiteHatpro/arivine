@@ -72,14 +72,42 @@
             authLink.textContent = 'Login';
             authLink.href = 'login.html';
         }
+        updateCartCount();
+    }
+
+    function updateCartCount() {
+        const el = document.getElementById('cart-count');
+        if (!el) return;
+        try {
+            const stored = localStorage.getItem('ARIVINE_CART');
+            const cart = stored ? JSON.parse(stored) : [];
+            const count = cart.reduce(function (sum, item) { return sum + (item.quantity || 1); }, 0);
+            el.textContent = '(' + count + ')';
+        } catch (e) {
+            el.textContent = '(0)';
+        }
     }
 
     // Run on load
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', updateAuthNavigation);
+        document.addEventListener('DOMContentLoaded', function () {
+            updateAuthNavigation();
+        });
     } else {
         updateAuthNavigation();
     }
+
+    window.addEventListener('cartUpdated', updateCartCount);
+
+    (function initNavToggle() {
+        var nav = document.getElementById('main-nav');
+        var btn = nav && nav.querySelector('.nav-toggle');
+        if (!nav || !btn) return;
+        btn.addEventListener('click', function () {
+            var open = nav.classList.toggle('nav-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+    })();
 
     // Handle redirection for account page
     if (window.location.pathname.endsWith('account.html')) {

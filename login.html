@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARIVINE — Login</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/catalog.css">
     <style>
@@ -26,7 +27,7 @@
 
         .auth-form {
             display: flex;
-            direction: column;
+            flex-direction: column;
             gap: 20px;
         }
 
@@ -71,13 +72,35 @@
             margin-bottom: 15px;
             display: none;
         }
+
+        @media (max-width: 768px) {
+            .auth-container {
+                margin: 80px 24px 60px;
+                padding: 32px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-container {
+                margin: 70px 16px 40px;
+                padding: 24px 20px;
+            }
+
+            .auth-submit {
+                min-height: 48px;
+            }
+        }
     </style>
 </head>
 
 <body class="catalog-page">
-    <nav class="navigation">
+    <nav class="navigation" id="main-nav">
         <div class="nav-left">
             <a href="index.html" class="logo-link">ARIVINE</a>
+        </div>
+        <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
+        <div class="nav-right">
+            <a href="collection.html" class="nav-link">Continue to collection</a>
         </div>
     </nav>
 

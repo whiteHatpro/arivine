@@ -31,15 +31,24 @@
         const container = document.getElementById('cart-items');
         const subtotalEl = document.getElementById('subtotal');
         const totalEl = document.getElementById('total');
+        const submitBtn = document.querySelector('.complete-order-btn');
 
         if (!container) return;
 
         if (cart.length === 0) {
-            container.innerHTML = '<p style="opacity: 0.5;">Your cart is currently empty.</p>';
-            subtotalEl.textContent = '₹0';
-            totalEl.textContent = '₹0';
+            container.innerHTML = '<p style="opacity: 0.5;">Your cart is currently empty.</p><p style="font-size: 0.85rem; margin-top: 8px;"><a href="collection.html" style="color: var(--color-gold); text-decoration: underline;">Add pieces from the collection</a> to complete your order.</p>';
+            if (subtotalEl) subtotalEl.textContent = '₹0';
+            if (totalEl) totalEl.textContent = '₹0';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.setAttribute('aria-disabled', 'true');
+            }
             updateNavCartCount();
             return;
+        }
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute('aria-disabled');
         }
 
         container.innerHTML = cart.map((item, index) => {
